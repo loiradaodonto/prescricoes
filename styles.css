@@ -1,0 +1,58 @@
+.sidebar {
+    width: 300px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    height: calc(100vh - 20px);
+    overflow-y: auto;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 340px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.result-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}

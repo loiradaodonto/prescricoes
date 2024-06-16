@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Doenças e Medicações</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex">
+    <div class="sidebar w-3/5 max-w-full">
+        <div id="disease-list"></div>
+    </div>
+    
+    <div class="content h-full w-3/5">
+        <h1 class="text-2xl font-bold mb-4">Pesquisa de Doenças e Medicações</h1>
+        <input id="search-input" type="text" placeholder="Digite o nome da doença" class="input-field">
+        <div id="suggestions" class="suggestions"></div>
+        <textarea id="results" class="result-field" rows="15" ></textarea>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
