@@ -74,6 +74,43 @@ $(document).ready(function() {
       });
   }
 
+  // Função para mostrar o popup
+  function showPopup() {
+      $('#popup-overlay').fadeIn();
+  }
+
+  // Função para esconder o popup
+  function hidePopup() {
+      $('#popup-overlay').fadeOut();
+      $('#new-disease').val('');
+      $('#new-medication').val('');
+  }
+
+  // Evento para mostrar o popup quando o botão é clicado
+  $('#add-disease-btn').click(function() {
+      showPopup();
+  });
+
+  // Evento para salvar a nova doença/medicação
+  $('#save-btn').click(function() {
+      const newDisease = $('#new-disease').val().trim();
+      const newMedication = $('#new-medication').val().trim();
+
+      if (newDisease && newMedication) {
+          data.push({ DOENCA: newDisease, MEDICACAO: newMedication });
+          saveData();
+          populateDiseaseList();
+          hidePopup();
+      } else {
+          alert('Por favor, preencha ambos os campos.');
+      }
+  });
+
+  // Evento para cancelar a adição
+  $('#cancel-btn').click(function() {
+      hidePopup();
+  });
+
   // Busca os dados quando a página carrega
   fetchData();
 });
