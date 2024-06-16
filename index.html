@@ -8,14 +8,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<style>
+    .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: white;
+    margin-top: 50px;
+    margin-left: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+</style>
 
 <body class="bg-gray-100 ">
+    
     <div>
         <nav>
             <a href="https://loiradaodonto.github.io/clone/">PedAjuda</a>
             <a href="https://loiradaodonto.github.io/receitas/">Receitas</a>
-            <a href="#">Calculadora Dengue</a>
-            <a href="#">ECG</a>
+            <a href="https://loiradaodonto.github.io/receitas/">Copi-Cola</a>
+            <a href="https://loiradaodonto.github.io/dengue/">Calculadora Dengue</a>
+            <a href="https://loiradaodonto.github.io/receitas/">ECG</a>
             
         </nav>
     </div>
@@ -23,15 +50,30 @@
     <div class="flex">
         <div class="sidebar mt-14 w-3/5 max-w-full">
             <div id="disease-list"></div>
+            
         </div>
         
         <div class="content h-full w-3/5">
-            <h1 class="text-2xl font-bold mb-4">Pesquisa de Doenças e Medicações</h1>
-            <input id="search-input" type="text" placeholder="Digite o nome da doença" class="input-field">
+            <div class="flex">
+                <h1 class="text-2xl font-bold mb-4 mr-9">Pesquisa de Doenças e Medicações</h1>
+                <button id="add-disease-btn" type="button" class="focus:outline-none text-white bg-gray-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-2 py-1 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Adicionar Doença/Medicação</button>
+             
+            </div>
+               <input id="search-input" type="text" placeholder="Digite o nome da doença" class="input-field">
             <div id="suggestions" class="suggestions"></div>
             <textarea id="results" class="result-field" rows="15" ></textarea>
         </div>
     </div>
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup">
+            <h2 class="text-xl font-bold mb-4">Adicionar Doença/Medicação</h2>
+            <input id="new-disease" type="text" placeholder="Nome da Doença" class="input-field mb-2">
+            <textarea id="new-medication" rows="10" placeholder="Medicação" class="input-field mb-2"></textarea>
+            <button id="save-btn" class="bg-green-500 text-white py-2 px-4 rounded">Salvar</button>
+            <button id="cancel-btn" class="bg-red-500 text-white py-2 px-4 rounded ml-2">Cancelar</button>
+        </div>
+    </div>
+   
    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
