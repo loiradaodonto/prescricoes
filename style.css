@@ -312,7 +312,7 @@ body.dark .search-bar input {
 .content-block {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: calc(100% - 500px); /* Ajuste a largura para evitar sobreposição */
   max-width: 600px;
