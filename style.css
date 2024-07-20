@@ -39,6 +39,10 @@ body.dark {
 }
 /* Reusable CSS */
 
+.container{
+  display: flex;
+}
+
 .sidebar .text {
   font-size: 16px;
   font-weight: 500;
@@ -47,7 +51,9 @@ body.dark {
   white-space: unset;
   opacity: 1;
 }
-
+::-webkit-scrollbar {
+  width: 0px;
+}
 .menu{
   overflow-y: auto;
 }
@@ -61,9 +67,9 @@ body.dark {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0px;
-  height: 100%;
+  height: 91%;
   width: 300px;
   background-color: var(--sidebar-color);
   padding: 10px 14px;
@@ -265,65 +271,10 @@ body.dark .search-bar input {
 }
 
 /* Estilo para o bloco de conteúdo */
-.content-block {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: var(--sidebar-color);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.content-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: var(--text-color);
-}
-
-.content-textarea {
-  
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 300px;
-  background-color: var(--sidebar-color);
-  padding: 10px 14px;
-  transition: var(--trans-02);
-  z-index: 1; /* Adiciona um valor z-index */
-}
 
-.content-block {
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 500px); /* Ajuste a largura para evitar sobreposição */
-  max-width: 600px;
-  padding: 20px;
-  background-color: var(--sidebar-color);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
- 
-}
+
 
 /* Estiliza o botão de exclusão */
 .delete-button {
@@ -379,7 +330,7 @@ body.dark .search-bar input {
 .popup {
   display: none; /* Oculta o popup por padrão */
   position: fixed; /* Fica fixo na tela */
-  z-index: 99; /* Fica sobre outros elementos */
+  z-index: 100; /* Fica sobre outros elementos */
   left: 0;
   top: 0;
   width: 100%; /* Ocupa toda a largura da tela */
@@ -445,3 +396,77 @@ body.dark .search-bar input {
 
 
 
+.abas {
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.abas a {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  /* transition: var(--trans-04); */
+  white-space: unset;
+  opacity: 1;
+  background-color: #595a5a34;
+  text-decoration: none;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+}
+
+
+.abas a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: scaleX(0);
+  background: #333;
+  transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+}
+
+.abas a:hover::after {
+  transform: scaleX(1);
+}
+
+
+.content-block {
+  position: absolute;
+  top: 70px;
+  bottom: 3%;
+  left: 320px;
+  
+  width: 50%;
+ 
+  padding: 20px;
+  background-color: var(--sidebar-color);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+.content-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.content-textarea {
+  color: var(--text-color);
+  background-color: var(--sidebar-color);
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
